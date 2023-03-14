@@ -24,12 +24,11 @@ size_t  ft_strlcpy(char *dst, const char *src, size_t size)
 int	main(void)
 {
 	char	new[100] = "testing";
-	char	old[100] = "12345454545";
+	char	old[100] = "123456";
 	char	*d;
 	char	*s;
 
 	d = new;
 	s = old;
-	printf("%ld\n", ft_strlcpy(d, s, 0));
-
+	printf("%ld\n", ft_strlcpy(d, s, 4));
 }
