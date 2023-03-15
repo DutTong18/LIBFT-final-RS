@@ -1,29 +1,41 @@
-#include <stdio.h>
-
-char    *ft_strrchr(const char *str, int c)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/15 11:04:03 by dphan             #+#    #+#             */
+/*   Updated: 2023/03/15 11:13:59 by dphan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+char	*ft_strrchr(const char *str, int c)
 {
-    char *find = NULL;
+	char	*find;
 
-    while (*str != '\0')
-    {
-        if(*str == c)
-        {
-            find = (char *)str;
-        }
-        str++;
-    }
-    return (find);
+	*find = 0;
+	while (*str != '\0')
+	{
+		if (*str == c)
+		{
+			find = (char *)str;
+		}
+		str++;
+	}
+	return (find);
 }
+/*
+#include <stdio.h>
 
 int main(void)
 {
     char *str = "Hello, how are you Harry";
     char c;
 
-    c = 'Z';
+    c = 'b';
     char *ret = ft_strrchr(str, c);
 
-    if(ret == NULL)
+    if(ret == 0)
     {
         printf("Not found\n");
     }
@@ -33,3 +45,4 @@ int main(void)
     }
     return (0);
 }
+*/

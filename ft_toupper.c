@@ -1,13 +1,24 @@
-#include <stdio.h>
-
-int ft_toupper(int ch)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/15 11:15:56 by dphan             #+#    #+#             */
+/*   Updated: 2023/03/15 11:17:11 by dphan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+int	ft_toupper(int ch)
 {
-    if (ch >= 'a' && ch <= 'z')
-    {
-        ch = ch - 32;
-    }
-    return (ch);
+	if (ch >= 'a' && ch <= 'z')
+	{
+		ch = ch - 32;
+	}
+	return (ch);
 }
+/*
+#include <stdio.h>
 
 int main(void)
 {
@@ -16,3 +27,4 @@ int main(void)
     c = '9';
     printf("%c\n", ft_toupper(c));
 }
+*/

@@ -1,13 +1,24 @@
-#include <stdio.h>
-
-int ft_tolower(int ch)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/15 11:14:27 by dphan             #+#    #+#             */
+/*   Updated: 2023/03/15 11:15:45 by dphan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+int	ft_tolower(int ch)
 {
-    if (ch >= 'A' && ch <= 'Z')
-    {
-        ch = ch + 32;
-    }
-    return (ch);
+	if (ch >= 'A' && ch <= 'Z')
+	{
+		ch = ch + 32;
+	}
+	return (ch);
 }
+/*
+#include <stdio.h>
 
 int main(void)
 {
@@ -16,3 +27,4 @@ int main(void)
     c = 'A';
     printf("%c\n", ft_tolower(c));
 }
+*/
