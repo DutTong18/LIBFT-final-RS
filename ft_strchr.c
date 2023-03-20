@@ -19,7 +19,7 @@ char	*strchr(const char *s, int c)
 		}
 		s++;
 	}
-	return NULL;
+	return (0);
 }
 
 #include <stdio.h>
@@ -32,7 +32,7 @@ int	main(void)
     c = 'o';
     char *ret = strchr(str, c);
 
-    if(ret == NULL)
+    if(ret == 0)
     {
         printf("Not found\n");
     }
