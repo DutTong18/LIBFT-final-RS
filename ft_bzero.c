@@ -6,27 +6,19 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:42:31 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 11:42:34 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 17:19:53 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_bzero(void *s, unsigned int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
-	char *str = (char *) s;
-	
+	unsigned char	*str;
+
+	str = (unsigned char *) s;
 	while (n > 0)
 	{
-		*str++ = '0';
+		*str++ = 0;;
 		n--;
 	}
 }
-
-#include <stdio.h>
-
-int	main(void)
-{
-	char str[10] = "hello";
-	ft_bzero(str, 4);
-	
-	printf("%s\n", str);
-}
-

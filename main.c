@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 11:42:42 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/22 17:44:07 by dphan            ###   ########.fr       */
+/*   Created: 2023/03/22 18:07:01 by dphan             #+#    #+#             */
+/*   Updated: 2023/03/22 18:08:55 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	main()
 {
-	char	*dest;
-	char	*source;
-
-	dest = (char *)dst;
-	source = (char *)src;
-	if ((source < dest) && (dest < source + len))
-	{
-		while (len > 0)
-		{
-			len--;
-			*(dest + len) = *(source + len);
-		}
-	}
-	else
-	{
-		while (len > 0)
-		{
-			*dest++ = *source++;
-			len--;
-		}
-	}
-	return (dst);
+	printf("size hola: %d\n", ft_strlen("hola"));
+	return (0);
 }

@@ -6,10 +6,10 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:55:39 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 11:03:44 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 16:17:46 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
 	{
@@ -21,7 +21,7 @@ char	*strchr(const char *s, int c)
 	}
 	return (0);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -29,8 +29,8 @@ int	main(void)
     char *str = "Hello, how are you";
     char c;
 
-    c = 'o';
-    char *ret = strchr(str, c);
+    c = 'e' + 23;
+    char *ret = ft_strchr(str, c);
 
     if(ret == 0)
     {
@@ -43,3 +43,4 @@ int	main(void)
     
     return (0);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:17:27 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 11:23:53 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:06:31 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
@@ -40,12 +40,12 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 
 int main(void)
 {
-    char    *s1 = "Hello";
-    char    *s2 = "HeLlo";
+    char    *s1 = "test\200";
+    char    *s2 = "test\0";
     int res;
 
 
-    res = ft_strncmp(s1, s2, 3);
+    res = ft_strncmp(s1, s2, 6);
 
     printf("%d\n", res);
 }

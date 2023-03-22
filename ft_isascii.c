@@ -6,29 +6,17 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:27:48 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 10:50:53 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 16:34:37 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-
-int	ft_isascii(char *str)
+int	ft_isascii(int c)
 {
-	while	(*str != '\0')
+	if (c >= 0 && c <= 127)
 	{
-		if (*str >= 0 && *str <= 127)
-		{
-			str++;
-		}
-		else
-		{
-			return (0);
-		}
+		return (1);
 	}
-	return (1);
-}
-
-int main(void)
-{
-	printf("%d\n", ft_isascii("h!@#$%^&*()_oo09"));
+	else
+	{
+		return (0);
+	}
 }

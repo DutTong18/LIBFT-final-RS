@@ -6,30 +6,17 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:53:41 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 10:51:43 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 16:28:30 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
-int	ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	while (*str != '\0')
+	if (c >= '0' && c <= '9')
 	{
-		if (*str >= '0' && *str <= '9')
-		{
-			str++;
-		}
-		else
-		{
-			return (0);
-		}
+		return (1);
 	}
-	return (1);
-}
-
-int	main(void)
-{
-	printf("%d\n", ft_isdigit("123"));
-	printf("%d\n", ft_isdigit("abc"));
-	printf("%d\n", ft_isdigit("123abc"));
+	else
+	{
+		return (0);
+	}
 }

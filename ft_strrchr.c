@@ -6,14 +6,14 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:04:03 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 11:13:59 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 14:40:45 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strrchr(const char *str, int c)
 {
 	char	*find;
 
-	*find = 0;
+	find = 0;
 	while (*str != '\0')
 	{
 		if (*str == c)

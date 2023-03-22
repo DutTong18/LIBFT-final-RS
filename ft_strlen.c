@@ -6,30 +6,20 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:55:35 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 10:54:14 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 18:02:30 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-int ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int i;
-
+	int	i;
+	
 	i = 0;
-	while (*str != '\0')
+	while (s[i] != '\0')
 	{
 		i++;
-		str++;
 	}
 	return (i);
-}
-
-int main(void)
-{
-	char *a;
-	int	b;
-
-	a  = "Hello, how are you";
-	b = ft_strlen(a);
-	printf("%d\n", b);
 }

@@ -6,30 +6,17 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:11:52 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 10:48:17 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 16:33:13 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-
-int	ft_isalnum(char *str)
+int	ft_isalnum(int c)
 {
-	while (*str != '\0')
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 	{
-		if ((*str >= 48 && *str <= 57) || (*str >= 65 && *str <= 90) || (*str >= 97 && *str <= 122))
-		{
-			str++;
-		}
-		else
-		{
-			return (0);
-		}
+		return (1);
 	}
-	return (1);
-}
-
-int	main(void)
-{
-	printf("%d\n", ft_isalnum("hello123"));
-	printf("%d\n", ft_isalnum("123="));	
+	else
+	{
+		return (0);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:43:29 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 11:43:31 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 14:18:20 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_memcmp(const void *str1, const void *str2, unsigned int n)
@@ -15,7 +15,7 @@ int	ft_memcmp(const void *str1, const void *str2, unsigned int n)
 	char	*s2 = (char *) str2;
 	int res;
 
-	while (*s1 || *s2 & n > 0)
+	while (*s1 || (*s2 && n > 0))
 	{
 		if (*s1 < *s2)
 		{

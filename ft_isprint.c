@@ -6,28 +6,17 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:51:57 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 10:52:31 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/22 17:09:52 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
-int ft_isprint(char *str)
+int ft_isprint(int c)
 {
-	while (*str != '\0')
+	if (c >= 32 && c <= 126)
 	{
-		if (*str >= 32 && *str <= 127)
-		{
-			str++;
-		}
-		else
-		{
-			return (0);
-		}
+		return (1);
 	}
-	return (1);
-}
-
-int main(void)
-{
-	printf("%d\n", ft_isprint("%^&*UHGHJKL:"));
+	else
+	{
+		return (0);
+	}
 }
