@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:12:46 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/22 18:25:14 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/23 12:21:45 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -22,7 +22,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int ch);
 int		ft_tolower(int ch);
-size_t		ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *str, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

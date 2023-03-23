@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:43:29 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/22 14:18:20 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/23 12:23:01 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_memcmp(const void *str1, const void *str2, unsigned int n)
