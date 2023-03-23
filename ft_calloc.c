@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 11:43:16 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/23 13:37:04 by dphan            ###   ########.fr       */
+/*   Created: 2023/03/23 14:49:34 by dphan             #+#    #+#             */
+/*   Updated: 2023/03/23 14:50:09 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
+void *	calloc(size_t count, size_t size)
 {
-	char	*string;
-
-	string = (char *)str;
-	while (*string && n > 0)
-	{
-		if (*string == c)
-		{
-			return ((char *)string);
-		}
-		string++;
-		n--;
-	}
-	return (0);
 }

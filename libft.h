@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:12:46 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/23 12:21:45 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/23 13:33:22 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -33,7 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-int		ft_memcmp(const void *str1, const void *str2, unsigned int n);
-void	*ft_memchr(const void *str, int c, unsigned int n);
+int		ft_memcmp(const void *str1, const void *str2, size_t n);
+void	*ft_memchr(const void *str, int c, size_t n);
 
 #endif
