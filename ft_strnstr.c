@@ -1,41 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 14:50:22 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/24 14:28:06 by dphan            ###   ########.fr       */
+/*   Created: 2023/03/24 16:17:57 by dphan             #+#    #+#             */
+/*   Updated: 2023/03/24 17:12:07 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h"
 
-char *	ft_strdup(const char *s1)
+char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*str;
-	char	*s2 = (char *)s1;
-	
-	str = (char *) malloc(sizeof(s1));
-	while (str)
+	char	*hay = (char *)haystack;
+	char	*need = (char *)needle;
+
+	if (*need == '\0')
 	{
-		str = s2;
-		str++;
-		s2++;
+		return (hay);
 	}
-	*str = '\0';
-	return (str);
+	while (*hay == '\0' && len > 0)
+	{
+		if (*hay == *need)
+		{
+			hay++;
+			need++;
+		}
+		else
+		{
+			return (hay);
+		}
+		len--;
+	}
+	return (hay);
 }
 
 #include <stdio.h>
+#include <string.h>
 
 int	main(void)
 {
-	char *src = "hello";
-	char *str;
+	char *h = "hello world";
+	char *n = "hello rorld";
 
-	str = ft_strdup(src);
-	printf("%s\n", str);
-	free(str);
-	return (0);
+	printf("%s\n", ft_strnstr(h, n, 9));
 }

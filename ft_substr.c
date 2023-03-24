@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 14:50:22 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/24 14:28:06 by dphan            ###   ########.fr       */
+/*   Created: 2023/03/24 14:28:21 by dphan             #+#    #+#             */
+/*   Updated: 2023/03/24 16:18:19 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
+#include "libft.h"
 
-char *	ft_strdup(const char *s1)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-	char	*s2 = (char *)s1;
+	char	*sub;
+	int		l = len - start;
 	
-	str = (char *) malloc(sizeof(s1));
-	while (str)
+	sub = (char *)malloc(sizeof(char) * (l + 1));
+	while (*(s + start) != '\0' && len > start)
 	{
-		str = s2;
-		str++;
-		s2++;
+		*sub = *(s + start);
+		sub++;
+		s++;
+		len--;
 	}
-	*str = '\0';
-	return (str);
+	*sub = '\0';
+	return (sub - l);
 }
-
 #include <stdio.h>
 
 int	main(void)
 {
-	char *src = "hello";
-	char *str;
+	char *s = "hello world";
+	char *dest;
 
-	str = ft_strdup(src);
-	printf("%s\n", str);
-	free(str);
+	dest = ft_substr(s, 8, 9);
+	printf("%s\n", dest);
 	return (0);
 }
