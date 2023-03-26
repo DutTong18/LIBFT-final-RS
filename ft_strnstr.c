@@ -15,25 +15,31 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*hay = (char *)haystack;
 	char	*need = (char *)needle;
+	size_t	i;
+	size_t	j;
 
+	i = 0;
 	if (*need == '\0')
 	{
 		return (hay);
 	}
-	while (*hay == '\0' && len > 0)
+	while (hay[i] != '\0' && i < len)
 	{
-		if (*hay == *need)
+		j = 0;
+		if (hay[i] == need[j])
 		{
-			hay++;
-			need++;
+			while (i + j < len && hay[i + j] == need[j])
+			{
+				j++;
+				if (need[j] == '\0')
+				{
+					return (&hay[i]);
+				}
+			}
 		}
-		else
-		{
-			return (hay);
-		}
-		len--;
+		i++;
 	}
-	return (hay);
+	return (0);
 }
 
 #include <stdio.h>
@@ -44,5 +50,7 @@ int	main(void)
 	char *h = "hello world";
 	char *n = "hello rorld";
 
-	printf("%s\n", ft_strnstr(h, n, 9));
+	char *res = ft_strnstr(h, n, 9);
+
+	printf("%s\n", res);
 }
