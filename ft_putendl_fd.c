@@ -6,11 +6,9 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:24:37 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/24 15:25:10 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/27 15:07:10 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putendl_fd(char *s, int fd)
-{
+//void	ft_putendl_fd(char *s, int fd)
 
-}

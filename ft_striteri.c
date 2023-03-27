@@ -6,10 +6,8 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:22:09 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/24 15:22:46 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/27 15:06:33 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-}
+//void	ft_striteri(char *s, void (*f)(unsigned int, char*)

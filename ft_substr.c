@@ -6,28 +6,33 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:28:21 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/24 16:18:19 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/27 14:51:16 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	int		l = len - start;
-	
-	sub = (char *)malloc(sizeof(char) * (l + 1));
-	while (*(s + start) != '\0' && len > start)
+	size_t	l;
+
+	l = 0;
+	if (!*s)
+		return (0);
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	if (!sub)
+		return (0);
+	while (*(s + start) != '\0' && l < len)
 	{
 		*sub = *(s + start);
 		sub++;
 		s++;
-		len--;
+		l++;
 	}
 	*sub = '\0';
 	return (sub - l);
 }
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -39,3 +44,4 @@ int	main(void)
 	printf("%s\n", dest);
 	return (0);
 }
+*/

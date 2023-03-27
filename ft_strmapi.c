@@ -6,10 +6,8 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:21:15 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/24 15:21:50 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/27 15:06:11 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-}
+//char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
