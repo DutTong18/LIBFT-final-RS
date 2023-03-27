@@ -6,9 +6,12 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:22:57 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/27 15:07:00 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/27 15:59:45 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-//void	ft_putchar_fd(char c, int fd)
-
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

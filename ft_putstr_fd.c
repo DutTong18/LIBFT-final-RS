@@ -6,8 +6,15 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:23:38 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/27 15:07:27 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/27 16:48:49 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-//void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
+{
+	while (*s)
+	{
+		write(fd, s++, 1);
+	}
+}
