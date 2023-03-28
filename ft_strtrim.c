@@ -6,11 +6,11 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:19:43 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/27 17:43:38 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/28 13:48:13 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strtrim(char const *s1, char const *set)
+/*char	*ft_strtrim(char const *s1, char const *set)
 {
 	
-}
+}*/

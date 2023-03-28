@@ -6,44 +6,33 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:43:41 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/23 14:49:28 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/28 13:33:08 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_atoi(const char *str)
 {
 	unsigned int	sign;
 	unsigned int	res;
+	unsigned char	*s;
 
 	sign = 1;
 	res = 0;
-	while (*str == 32 || (*str > 8 && *str < 14))
+	s = (unsigned char *)str;
+	while (*s == 32 || (*s > 8 && *s < 14))
 	{
-		str++;
+		s++;
 	}
-	if (*str == '-' || *str == '+')
+	if (*s == '-' || *s == '+')
 	{
-		if (*str++ == '-')
+		if (*s++ == '-')
 		{
 			sign *= -1;
 		}
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*s >= '0' && *s <= '9')
 	{
-		res = res * 10 + (*str - '0');
-		str++;
+		res = res * 10 + (*s - '0');
+		s++;
 	}
 	return (res * sign);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main(void)
-{
-	char *str = "--123";
-	
-	printf("%d\n", ft_atoi(str));
-	printf("%d\n", atoi(str))
-;	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:20:48 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/27 18:00:04 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/28 15:50:07 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,5 +15,5 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 
-	str = (char *)malloc(sizeof(int * 
+	
 }

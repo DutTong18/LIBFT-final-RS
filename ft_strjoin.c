@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:18:58 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/27 15:59:27 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/28 14:12:53 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,8 +19,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
+	if (!s1 || !s2)
+		return (0);
 	new = (char *)malloc(sizeof(char) * (lens1 + lens2 + 1));
-	if (!*new)
+	if (!new)
 		return (0);
 	while (*s1)
 	{

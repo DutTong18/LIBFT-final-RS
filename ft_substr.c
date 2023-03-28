@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:28:21 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/27 14:51:16 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/28 13:29:09 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,6 +19,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	l = 0;
 	if (!*s)
 		return (0);
+	if (start >= ft_strlen(s))
+	{
+		return (ft_strdup(""));
+	}
 	sub = (char *)malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (0);
@@ -32,16 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	*sub = '\0';
 	return (sub - l);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char *s = "hello world";
-	char *dest;
-
-	dest = ft_substr(s, 8, 9);
-	printf("%s\n", dest);
-	return (0);
-}
-*/

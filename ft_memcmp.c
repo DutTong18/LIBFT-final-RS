@@ -6,35 +6,29 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:43:29 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/23 14:24:18 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/28 13:14:27 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	char	*s1;
-	char	*s2;
-	int		res;
+	unsigned char	*s1;
+	unsigned char	*s2;
+	size_t			i;
 
-	s1 = (char *)str1;
-	s2 = (char *)str2;
-	while (*s1 || (*s2 && n > 0))
+	s1 = (unsigned char *)str1;
+	s2 = (unsigned char *)str2;
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (i < n && (*s1 || *s2))
 	{
-		if (*s1 < *s2)
+		if (s1[i] != s2[i])
 		{
-			return (-1);
+			return (s1[i] - s2[i]);
 		}
-		else if (*s1 > *s2)
-		{
-			return (1);
-		}
-		else
-		{
-			res = 0;
-		}
-		s1++;
-		s2++;
+		i++;
 	}
-	return (res);
+	return (0);
 }
