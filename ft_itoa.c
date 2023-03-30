@@ -11,9 +11,40 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+static int	get_length(int n)
+{
+	int i;
+
+	i = 1;
+	while (n /= 10)
+	{
+		i++;
+	}
+	return (i);
+}
+
 char	*ft_itoa(int n)
 {
-	char	*str;
+	int	len;
+	int num;
 
-	
+	num = n;
+	len = get_length(n);
+	if (n < 0)
+	{
+		num *= -1;
+		len++;
+	}
+	char	*str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (0);
+	str[len] = '\0';
+	while (len--)
+	{
+		str[len] = (num % 10) + '0';
+		num /= 10;
+	}
+	if (n < 0)
+		str[0] = '-';
+	return (str);
 }
