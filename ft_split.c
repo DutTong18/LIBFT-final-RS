@@ -41,11 +41,11 @@ char	**ft_split(char const *s, char c)
     int     i;
     char    **str;
     char    **str2;
-    char    *start;
-    char    *end;
+    const   char    *start;
+    const   char    *end;
 
-    len = ft_count(s, c);
-    if !(str = (char **)malloc(sizeof(char *) * len + 1))
+    len1 = ft_count(s, c);
+    if (!(str = (char **)malloc(sizeof(char *) * len1 + 1)))
         return (0);
     while (*s)
     {
@@ -60,13 +60,20 @@ char	**ft_split(char const *s, char c)
         }
         end = s;
         len2 = end - start;
-        if !(str2 = (char *)malloc(sizeof(char) * len + 1))
+        if (!(str2 = (char **)malloc(sizeof(char) * len2 + 1)))
             return (0);
-        ft_strlcpy(str2, start, len2);
+        ft_strlcpy(*str2, start, len2);
         i = 0;
-        str2 + len = '\0';
-        str[i++] = str2;
+        **(str2 + len2) = '\0';
+        str[i++] = *str2;
     }
     str[i] = '\0';
     return (str);
+}
+
+int main(void)
+{
+    char *s = "Hello world, how are you?";
+
+    printf("%s\n", *ft_split(s, ' '));
 }

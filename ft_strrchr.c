@@ -12,10 +12,10 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	char	*find;
-	char	*s;
+	//char	*s;
 
 	find = 0;
-	s = (char *)str;
+	//s = (char *)str;
 	while (*str != '\0')
 	{
 		if (*str == c)
