@@ -36,44 +36,59 @@ static int  ft_count(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-    int     len1;
-    int     len2;
-    int     i;
-    char    **str;
-    char    **str2;
-    const   char    *start;
-    const   char    *end;
+    char        **str;
+    char const  *s1;
+    char const  *start;
+    size_t      slen;
+    size_t      sublen;
+    size_t      i;
 
-    len1 = ft_count(s, c);
-    if (!(str = (char **)malloc(sizeof(char *) * len1 + 1)))
-        return (0);
-    while (*s)
+    slen = ft_count(s, c);
+    if (!(str = malloc(sizeof(char *) * (slen + 1))))
     {
-        if (*s == c)
-        {
-            s++;
-        }
-        start = s;
-        while (*s && *s != c)
-        {
-            s++;
-        }
-        end = s;
-        len2 = end - start;
-        if (!(str2 = (char **)malloc(sizeof(char) * len2 + 1)))
-            return (0);
-        ft_strlcpy(*str2, start, len2);
-        i = 0;
-        **(str2 + len2) = '\0';
-        str[i++] = *str2;
+        return (0);
     }
-    str[i] = '\0';
+    s1 = s;
+    while (*s1)
+    {
+        if (*s1 == c)
+            s1++;
+        start = s1;
+        while (*s1 && *s1 != c)
+        {
+            s1++;
+        }
+        sublen = s1 - start;
+        i = 0;
+        if (!(str[i] = malloc(sublen + 1)))
+        {
+            while (i > 0)
+            {
+                free(str[i]);
+                i--;
+            }
+            free (str);
+            return (0);
+        }
+        ft_strlcpy(str[i], start, sublen);
+        str[i][sublen] = '\0';
+        i++;
+    }   
+    str[slen] = '\0';
     return (str);
 }
 
 int main(void)
 {
-    char *s = "Hello world, how are you?";
-
-    printf("%s\n", *ft_split(s, ' '));
+    char **s = ft_split("Hello world, how are you?", ' ');
+    if (s)
+    {
+        for (size_t i = 0; s[i]; i++)
+        {
+            printf("%s\n", s[i]);
+            free(s[i]);
+        }
+    }
+    free(s);
+    
 }

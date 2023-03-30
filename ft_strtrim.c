@@ -23,7 +23,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		start++;
 	}
-	end = ft_strlen(s1) + start ;
+	end = ft_strlen(s1) - 1;
 	while (end > start && ft_strchr(set, *(s1 + end)))
 	{
 		end--;
@@ -40,8 +40,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int main(void)
 {
-	char *str = "asdHelloasdworlda";
+	char *str = "blah blah blah hello   blah";
 
-	printf("%s\n", ft_strtrim(str, "asd"));
+	printf("%s\n", ft_strtrim(str, "blah"));
 }
 */
