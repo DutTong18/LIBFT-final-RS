@@ -6,38 +6,43 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:20:48 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/28 15:50:07 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/31 12:59:13 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	get_length(int n)
+static unsigned int	get_length(int n)
 {
-	int i;
+	int	i;
 
-	i = 1;
-	while (n /= 10)
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		i++;
+	while (n)
 	{
 		i++;
+		n /= 10;
 	}
 	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	int	len;
-	int num;
+	unsigned int	len;
+	unsigned int	num;
+	char			*str;
 
 	num = n;
 	len = get_length(n);
-	if (n < 0)
-	{
-		num *= -1;
-		len++;
-	}
-	char	*str = (char *)malloc(sizeof(char) * len + 1);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
+	if (n < 0)
+	{
+		num = -n;
+	}
 	str[len] = '\0';
 	while (len--)
 	{

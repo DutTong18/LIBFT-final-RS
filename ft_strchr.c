@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:55:39 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/23 11:59:22 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/31 13:03:58 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strchr(const char *s, int c)
@@ -14,17 +14,17 @@ char	*ft_strchr(const char *s, int c)
 	char	*str;
 
 	str = (char *)s;
-	while (*str != '\0')
+	while (*str != (unsigned char)c)
 	{
-		if (*str == c)
+		if (*str == '\0')
 		{
-			return ((char *)str);
+			return (0);
 		}
 		str++;
 	}
-	if (c == 0 || c == '\0')
+	if (!(unsigned char)c)
 	{
 		return (str);
 	}
-	return (0);
+	return (str);
 }
