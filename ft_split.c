@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:20:18 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/31 13:32:49 by dphan            ###   ########.fr       */
+/*   Updated: 2023/03/31 15:48:03 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -32,20 +32,32 @@ static int	ft_count(char const *s, char c)
 	return (words);
 }
 
+static char	*ft_free(char **s, size_t len)
+{
+	size_t i;
+	
+	while (i < len)
+	{
+		free (s[i]);
+		i++;
+	}
+	free (tab);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char		**str;
 	char const	*s1;
 	char const	*start;
-	size_t		slen;
 	size_t		sublen;
 	size_t		i;
+	size_t		j;
 	
-	slen = ft_count(s, c);
-	if (!(str = malloc(sizeof(char *) * (slen + 1))))
-	{
+	j = 0;
+	str = malloc(sizeof(char *) * (ft_count(s, c) + 1));
+	if (!str)
 		return (0);
-	}
 	s1 = s;
 	while (*s1)
 	{
@@ -57,20 +69,11 @@ char	**ft_split(char const *s, char c)
 			s1++;
 		}
 		sublen = s1 - start;
-		i = 0;
-		if (!(str[i] = malloc(sublen + 1)))
-		{
-			while (i > 0)
-			{
-				free(str[i]);
-				i--;
-			}
-			free (str);
-			return (0);
-		}
-		ft_strlcpy(str[i], start, sublen);
-		str[i][sublen] = 0;
-		i++;
+		str[j] = ft_substr(s1, i, sublen);
+		if (!str[j])
+			return (ft_free(*str, j));
+		j++;
+		i = start;
 	}
 	str[slen] = NULL;
 	return (str);
