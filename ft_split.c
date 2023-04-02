@@ -22,7 +22,7 @@ static int	ft_count(char const *s, char c)
 	{
 		if (*s == c)
 			words = 0;
-		else if (!words)
+		else if (words == 0)
 		{
 			words = 1;
 			i++;
@@ -32,53 +32,46 @@ static int	ft_count(char const *s, char c)
 	return (words);
 }
 
-static char	*ft_free(char **s, size_t len)
-{
-	size_t i;
-	
-	while (i < len)
-	{
-		free (s[i]);
-		i++;
-	}
-	free (tab);
-	return (0);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	char		**str;
-	char const	*s1;
-	char const	*start;
-	size_t		sublen;
-	size_t		i;
-	size_t		j;
-	
-	j = 0;
-	str = malloc(sizeof(char *) * (ft_count(s, c) + 1));
+	char	**str;
+	size_t	i;
+	size_t	j;
+
+	str = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (!str)
 		return (0);
-	s1 = s;
-	while (*s1)
+	i = 0;
+	while (*s)
 	{
-		if (*s1 == c)
-			s1++;
-		start = s1;
-		while (*s1 && *s1 != c)
+		j = 0;
+		while (*s == c && *s)
 		{
-			s1++;
+			s++;
 		}
-		sublen = s1 - start;
-		str[j] = ft_substr(s1, i, sublen);
-		if (!str[j])
-			return (ft_free(*str, j));
-		j++;
-		i = start;
-	}
-	str[slen] = NULL;
+		while (s[j] && s[j] != c)
+		{
+			j++;
+		}
+		str[i] = (char *)malloc(sizeof(char) * (j + 1));
+		if (!str[i])
+		{
+			while (--i > 0)
+			{
+				free(str[i]);
+			}
+			free(str);
+			return (0);
+		}
+		ft_strlcpy(str[i], s, j);
+		str[i][j] = '\0';
+		i++;
+		s += j;
+	}	
+	str[i] = '\0';
 	return (str);
 }
-/*
+
 int main(void)
 {
     char **s = ft_split("Hello world, how are you?", ' ');
@@ -91,6 +84,6 @@ int main(void)
         }
     }
     free(s);
-    
+	return (0);
 }
-*/
+
