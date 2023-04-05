@@ -22,14 +22,32 @@ static int	ft_count(char const *s, char c)
 	{
 		if (*s == c)
 			words = 0;
-		else if (words == 0)
+		else if (!words)
 		{
 			words = 1;
 			i++;
 		}
 		s++;
 	}
-	return (words);
+	return (i);
+}
+
+static char	*ft_strndup(const char *s, size_t n)
+{
+	char	*str;
+	size_t	i;
+
+	str = (char *)malloc(sizeof(char) * (n + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
 char	**ft_split(char const *s, char c)
@@ -63,8 +81,8 @@ char	**ft_split(char const *s, char c)
 			free(str);
 			return (0);
 		}
-		ft_strlcpy(str[i], s, j);
-		str[i][j] = '\0';
+		str[i] = ft_strndup(s, j);
+		//str[i][j] = '\0';
 		i++;
 		s += j;
 	}	

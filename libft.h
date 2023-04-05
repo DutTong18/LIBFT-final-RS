@@ -49,5 +49,10 @@ void	ft_putnbr_fd(int n, int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strtrim(char const *s1, char const *set);
+typedef struct  s_list
+{
+    void            *content;
+    struct s_list   *next;
+}                   t_list;
 
 #endif
