@@ -6,7 +6,7 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:20:18 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/31 15:48:03 by dphan            ###   ########.fr       */
+/*   Updated: 2023/04/06 17:49:28 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,13 +20,13 @@ static int	ft_count(char const *s, char c)
 	words = 0;
 	while (*s)
 	{
-		if (*s == c)
-			words = 0;
-		else if (!words)
+		if (*s != c && !words)
 		{
 			words = 1;
 			i++;
 		}
+		else if (*s == c)
+			words = 0;
 		s++;
 	}
 	return (i);
@@ -55,53 +55,26 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	size_t	i;
 	size_t	j;
+	size_t	len;
+	size_t	start;
 
-	str = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
+	if (!s)
+		return (0);
+	len = ft_count(s, c);
+	str = (char **)malloc(sizeof(char *) * (len + 1));
 	if (!str)
 		return (0);
 	i = 0;
-	while (*s)
+	j = 0;
+	while (j < len)
 	{
-		j = 0;
-		while (*s == c && *s)
-		{
-			s++;
-		}
-		while (s[j] && s[j] != c)
-		{
-			j++;
-		}
-		str[i] = (char *)malloc(sizeof(char) * (j + 1));
-		if (!str[i])
-		{
-			while (--i > 0)
-			{
-				free(str[i]);
-			}
-			free(str);
-			return (0);
-		}
-		str[i] = ft_strndup(s, j);
-		//str[i][j] = '\0';
-		i++;
-		s += j;
-	}	
-	str[i] = '\0';
+		while (s[i] == c)
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		str[j++] = ft_strndup(s + start, i - start);
+	}
+	str[j] = NULL;
 	return (str);
 }
-
-int main(void)
-{
-    char **s = ft_split("Hello world, how are you?", ' ');
-    if (s)
-    {
-        for (size_t i = 0; s[i]; i++)
-        {
-            printf("%s\n", s[i]);
-            free(s[i]);
-        }
-    }
-    free(s);
-	return (0);
-}
-

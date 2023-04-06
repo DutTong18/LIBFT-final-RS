@@ -6,12 +6,12 @@
 /*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:28:21 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/31 13:32:10 by dphan            ###   ########.fr       */
+/*   Updated: 2023/04/06 17:24:15 by dphan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*empt(void)
+char	*empty(void)
 {
 	char	*empt;
 
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (0);
 	if (start > ft_strlen(s))
-		return (empt());
+		return (empty());
 	slen = ft_strlen(s + start);
 	if (slen < len)
 		len = slen;
