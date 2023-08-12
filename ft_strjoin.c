@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtong <dtong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/24 15:18:58 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/28 14:12:53 by dphan            ###   ########.fr       */
+/*   Created: 2023/07/06 12:47:49 by dtong             #+#    #+#             */
+/*   Updated: 2023/08/12 20:53:20 by dtong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

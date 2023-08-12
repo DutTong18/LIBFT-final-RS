@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtong <dtong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 13:45:14 by dphan             #+#    #+#             */
-/*   Updated: 2023/04/06 13:45:38 by dphan            ###   ########.fr       */
+/*   Created: 2023/07/06 12:49:58 by dtong             #+#    #+#             */
+/*   Updated: 2023/08/12 20:53:00 by dtong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))

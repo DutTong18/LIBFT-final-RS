@@ -3,30 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtong <dtong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 13:46:59 by dphan             #+#    #+#             */
-/*   Updated: 2023/04/06 17:55:15 by dphan            ###   ########.fr       */
+/*   Created: 2023/07/06 12:49:40 by dtong             #+#    #+#             */
+/*   Updated: 2023/08/12 20:58:37 by dtong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*temp;
-	t_list	*new;
+	t_list	*new_list;
+	t_list	*new_blank;
 
-	new = 0;
+	if (!lst)
+		return (NULL);
+	new_list = (void *)0;
 	while (lst)
 	{
-		temp = ft_lstnew((*f)(lst->content));
-		if (!temp)
+		new_blank = ft_lstnew(f(lst->content));
+		if (!new_blank)
 		{
-			ft_lstclear(&new, del);
-			return (0);
+			ft_lstclear(&new_list, del);
+			return (NULL);
 		}
-		ft_lstadd_back(&new, temp);
+		ft_lstadd_back(&new_list, new_blank);
 		lst = lst->next;
 	}
-	return (new);
+	return (new_list);
 }

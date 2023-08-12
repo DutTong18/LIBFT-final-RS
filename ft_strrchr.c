@@ -3,26 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtong <dtong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 11:04:03 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/31 13:04:23 by dphan            ###   ########.fr       */
+/*   Created: 2023/07/06 12:46:05 by dtong             #+#    #+#             */
+/*   Updated: 2023/08/12 20:53:26 by dtong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strrchr(const char *str, int c)
+
+char	*ft_strrchr(const char *str, int j)
 {
 	char	*find;
 
 	find = 0;
 	while (*str != '\0')
 	{
-		if (*str == (unsigned char)c)
-		{
+		if (*str == (unsigned char)j)
 			find = (char *)str;
-		}
 		str++;
 	}
-	if ((unsigned char)c == '\0')
+	if ((unsigned char)j == '\0')
 	{
 		find = (char *)str;
 	}

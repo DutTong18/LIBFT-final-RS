@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtong <dtong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 11:14:27 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/22 16:02:13 by dphan            ###   ########.fr       */
+/*   Created: 2023/07/06 12:45:42 by dtong             #+#    #+#             */
+/*   Updated: 2023/08/12 20:53:29 by dtong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_tolower(int ch)
+
+int	ft_tolower(int s)
 {
-	if (ch >= 'A' && ch <= 'Z')
-	{
-		ch = ch + 32;
-	}
-	return (ch);
+	if (s >= 'A' && s <= 'Z')
+		s = s + 32;
+	return (s);
 }
 /*
 #include <stdio.h>

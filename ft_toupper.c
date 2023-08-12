@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtong <dtong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 11:15:56 by dphan             #+#    #+#             */
-/*   Updated: 2023/03/15 11:17:11 by dphan            ###   ########.fr       */
+/*   Created: 2023/07/06 12:45:35 by dtong             #+#    #+#             */
+/*   Updated: 2023/08/12 20:53:30 by dtong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_toupper(int ch)
+
+int	ft_toupper(int s)
 {
-	if (ch >= 'a' && ch <= 'z')
-	{
-		ch = ch - 32;
-	}
-	return (ch);
+	if (s >= 'a' && s <= 'z')
+		s = s - 32;
+	return (s);
 }
 /*
 #include <stdio.h>

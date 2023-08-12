@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dphan <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtong <dtong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 14:12:46 by dphan             #+#    #+#             */
-/*   Updated: 2023/04/06 17:29:04 by dphan            ###   ########.fr       */
+/*   Created: 2023/07/06 12:45:20 by dtong             #+#    #+#             */
+/*   Updated: 2023/08/12 20:53:37 by dtong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
@@ -21,16 +22,16 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-int		ft_isalpha(int c);
-int		ft_isalnum(int c);
-int		ft_isdigit(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_toupper(int ch);
-int		ft_tolower(int ch);
+int		ft_isalpha(int j);
+int		ft_isalnum(int j);
+int		ft_isdigit(int j);
+int		ft_isascii(int j);
+int		ft_isprint(int j);
+int		ft_toupper(int s);
+int		ft_tolower(int s);
 size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *str, int c);
+char	*ft_strchr(const char *s, int j);
+char	*ft_strrchr(const char *str, int j);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
